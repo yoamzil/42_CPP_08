@@ -16,28 +16,40 @@
 
 #include "Span.hpp"
 
-int	main()
+// int	main()
+// {
+// 	try
+// 	{
+//         Span sp = Span(10);
+//         std::vector<int> nums;
+//         nums.push_back(1);
+//         nums.push_back(2);
+//         nums.push_back(3);
+//         nums.push_back(4);
+//         nums.push_back(5);
+//         nums.push_back(6);
+//         nums.push_back(7);
+//         nums.push_back(8);
+//         nums.push_back(9);
+//         nums.push_back(10);
+//         sp.addNumbers(nums.begin(), nums.end());
+//     }
+//     catch (std::exception &e)
+//     {
+//         std::cout << "Error!" << std::endl;
+//     }
+//     return (0);
+// }
+
+int main()
 {
-	try
-	{
-        Span sp = Span(10);
-        std::vector<int> nums;
-        nums.push_back(1);
-        nums.push_back(2);
-        nums.push_back(3);
-        nums.push_back(4);
-        nums.push_back(5);
-        nums.push_back(6);
-        nums.push_back(7);
-        nums.push_back(8);
-        nums.push_back(9);
-        nums.push_back(10);
-        sp.addNumbers(nums.begin(), nums.end());
-        sp.printContents();
-    }
-    catch (std::exception &e)
-    {
-        std::cout << "Error!" << std::endl;
-    }
-    return (0);
+	Span sp = Span(5);
+	sp.addNumber(6);
+	sp.addNumber(3);
+	sp.addNumber(17);
+	sp.addNumber(9);
+	sp.addNumber(11);
+	std::cout << sp.shortestSpan() << std::endl;
+	std::cout << sp.longestSpan() << std::endl;
+	return 0;
 }

@@ -38,12 +38,6 @@ class   Span
 		int		shortestSpan();
 		int		longestSpan();
 		void	addNumbers(std::vector<int>::iterator start, std::vector<int>::iterator end);
-		   void printContents() const {
-        for (std::vector<int>::const_iterator it = numbers.begin(); it != numbers.end(); ++it) {
-            std::cout << *it << " ";
-        }
-        std::cout << std::endl;
-    };
 };
 
 #endif
