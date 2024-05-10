@@ -18,17 +18,17 @@
 
 Span::Span()
 {
-	std::cout << "Span constructor called" << std::endl;
+	// std::cout << "Span constructor called" << std::endl;
 }
 
 Span::~Span()
 {
-	std::cout << "Span destructor called" << std::endl;
+	// std::cout << "Span destructor called" << std::endl;
 }
 
 Span::Span(Span const &original)
 {
-	std::cout << "Span copy constructor called" << std::endl;
+	// std::cout << "Span copy constructor called" << std::endl;
 	*this = original;
 }
 
@@ -41,16 +41,16 @@ Span &Span::operator=(Span const &original)
 	return (*this);
 }
 
-Span::Span(unsigned int n)
+Span::Span(unsigned int N)
 {
-	std::cout << "Span constructor called" << std::endl;
-	this->n = n;
-	this->numbers.reserve(n);
+	// std::cout << "Span constructor called" << std::endl;
+	this->N = N;
+	this->numbers.reserve(N);
 }
 
 void Span::addNumber(int number)
 {
-	if (this->numbers.size() < this->n)
+	if (this->numbers.size() < this->N)
 	{
 		this->numbers.push_back(number);
 	}
@@ -88,4 +88,20 @@ int Span::longestSpan()
 	std::vector<int> sorted = this->numbers;
 	std::sort(sorted.begin(), sorted.end());
 	return (sorted[sorted.size() - 1] - sorted[0]);
+}
+
+void	Span::addNumbers(std::vector<int>::iterator start, std::vector<int>::iterator end)
+{
+	if (this->numbers.size() + std::distance(start, end) <= this->N)
+	{
+		while (start != end)
+		{
+			addNumber(*start);
+			start++;
+		}
+	}
+	else
+	{
+		throw std::exception();
+	}
 }
