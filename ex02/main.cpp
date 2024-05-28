@@ -16,28 +16,72 @@
 
 #include "MutantStack.hpp"
 
-int main()
-{
+int main() {
     MutantStack<int> mstack;
-    mstack.push(5);
-    mstack.push(17);
-    std::cout << mstack.top() << std::endl;
-    mstack.pop();
-    std::cout << mstack.size() << std::endl;
-    mstack.push(3);
-    mstack.push(5);
-    mstack.push(737);
-    //[...]
-    mstack.push(0);
-    MutantStack<int>::iterator it = mstack.begin();
-    MutantStack<int>::iterator ite = mstack.end();
-    ++it;
-    --it;
-    while (it != ite)
-    {
-        std::cout << *it << std::endl;
-        ++it;
+
+    // Test push and size
+    for(int i = 0; i < 10; ++i) {
+        mstack.push(i);
     }
-    std::stack<int> s(mstack);
+    std::cout << "Size after pushing 10 elements: " << mstack.size() << std::endl;
+
+    // Test iterator
+    std::cout << "Elements in the stack: ";
+    for(MutantStack<int>::iterator it = mstack.begin(); it != mstack.end(); ++it) {
+        std::cout << *it << " ";
+    }
+    std::cout << std::endl;
+
+    // Test pop
+    mstack.pop();
+    std::cout << "Size after popping one element: " << mstack.size() << std::endl;
+
+    // Test top
+    std::cout << "Top element after popping: " << mstack.top() << std::endl;
+
+    // Test copy constructor
+    MutantStack<int> mstack2(mstack);
+    std::cout << "Size of copied stack: " << mstack2.size() << std::endl;
+
+    // Test assignment operator
+    MutantStack<int> mstack3;
+    mstack3 = mstack;
+    std::cout << "Size of stack after assignment: " << mstack3.size() << std::endl;
+
     return 0;
 }
+
+// int main() {
+//     MutantStack<int> mstack;
+
+//     // Test push and size
+//     for(int i = 0; i < 10; ++i) {
+//         mstack.push(i);
+//     }
+//     std::cout << "Size after pushing 10 elements: " << mstack.size() << std::endl;
+
+//     // Test iterator
+//     std::cout << "Elements in the stack: ";
+//     for(MutantStack<int>::iterator it = mstack.begin(); it != mstack.end(); ++it) {
+//         std::cout << *it << " ";
+//     }
+//     std::cout << std::endl;
+
+//     // Test pop
+//     mstack.pop();
+//     std::cout << "Size after popping one element: " << mstack.size() << std::endl;
+
+//     // Test top
+//     std::cout << "Top element after popping: " << mstack.top() << std::endl;
+
+//     // Test copy constructor
+//     MutantStack<int> mstack2(mstack);
+//     std::cout << "Size of copied stack: " << mstack2.size() << std::endl;
+
+//     // Test assignment operator
+//     MutantStack<int> mstack3;
+//     mstack3 = mstack;
+//     std::cout << "Size of stack after assignment: " << mstack3.size() << std::endl;
+
+//     return 0;
+// }
