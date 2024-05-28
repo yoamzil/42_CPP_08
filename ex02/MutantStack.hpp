@@ -21,22 +21,35 @@
 #include <stack>
 
 template <typename T>
-class   MutantStack
+class   MutantStack : public std::stack<T>
 {
     private:
+        std::stack<T>   _stack;
     public:
-        MutantStack();
-        ~MutantStack();
-        MutantStack(MutantStack const &original);
-        MutantStack  &operator=(MutantStack const &original);
+        MutantStack(){}
+        ~MutantStack(){}
+        MutantStack(MutantStack const &original)
+        {
+            *this = original;
+        }
+        MutantStack  &operator=(MutantStack const &original)
+        {
+            if (this != &original)
+            {
+                *this = original;
+            }
+            return (*this);
+        }
 
-		void	push(T value);
-		void	pop();
-		T		top();
-		size_t	size();
-		typedef typename std::vector<T>::iterator iterator;
-		iterator	begin();
-		iterator	end();
+		typedef typename std::stack<T>::container_type::iterator iterator;
+		iterator	begin()
+        {
+            return std::stack<T>::c.begin();
+        }
+		iterator	end()
+        {
+            return std::stack<T>::c.end();
+        }
 };
 
 #endif
