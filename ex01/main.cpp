@@ -16,6 +16,19 @@
 
 #include "Span.hpp"
 
+int main()
+{
+	Span sp = Span(5);
+	sp.addNumber(6);
+	sp.addNumber(3);
+	sp.addNumber(17);
+	sp.addNumber(9);
+	sp.addNumber(11);
+	std::cout << sp.shortestSpan() << std::endl;
+	std::cout << sp.longestSpan() << std::endl;
+	return 0;
+}
+
 // int	main()
 // {
 // 	try
@@ -33,6 +46,12 @@
 //         nums.push_back(9);
 //         nums.push_back(10);
 //         sp.addNumbers(nums.begin(), nums.end());
+//         std::cout << "nums vector: ";
+//         for (std::vector<int>::iterator it = nums.begin(); it != nums.end(); it++)
+//         {
+//             std::cout << *it << " ";
+//         }
+//         std::cout << std::endl;
 //     }
 //     catch (std::exception &e)
 //     {
@@ -40,16 +59,3 @@
 //     }
 //     return (0);
 // }
-
-int main()
-{
-	Span sp = Span(5);
-	sp.addNumber(6);
-	sp.addNumber(3);
-	sp.addNumber(17);
-	sp.addNumber(9);
-	sp.addNumber(11);
-	std::cout << sp.shortestSpan() << std::endl;
-	std::cout << sp.longestSpan() << std::endl;
-	return 0;
-}

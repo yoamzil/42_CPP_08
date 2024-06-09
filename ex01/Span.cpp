@@ -36,7 +36,8 @@ Span &Span::operator=(Span const &original)
 {
 	if (this != &original)
 	{
-		*this = original;
+        this->N = original.N;
+        this->numbers = original.numbers;
 	}
 	return (*this);
 }

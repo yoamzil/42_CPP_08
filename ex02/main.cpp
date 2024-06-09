@@ -16,7 +16,8 @@
 
 #include "MutantStack.hpp"
 
-int main() {
+int main()
+{
     MutantStack<int> mstack;
 
     // Test push and size
@@ -50,38 +51,3 @@ int main() {
 
     return 0;
 }
-
-// int main() {
-//     MutantStack<int> mstack;
-
-//     // Test push and size
-//     for(int i = 0; i < 10; ++i) {
-//         mstack.push(i);
-//     }
-//     std::cout << "Size after pushing 10 elements: " << mstack.size() << std::endl;
-
-//     // Test iterator
-//     std::cout << "Elements in the stack: ";
-//     for(MutantStack<int>::iterator it = mstack.begin(); it != mstack.end(); ++it) {
-//         std::cout << *it << " ";
-//     }
-//     std::cout << std::endl;
-
-//     // Test pop
-//     mstack.pop();
-//     std::cout << "Size after popping one element: " << mstack.size() << std::endl;
-
-//     // Test top
-//     std::cout << "Top element after popping: " << mstack.top() << std::endl;
-
-//     // Test copy constructor
-//     MutantStack<int> mstack2(mstack);
-//     std::cout << "Size of copied stack: " << mstack2.size() << std::endl;
-
-//     // Test assignment operator
-//     MutantStack<int> mstack3;
-//     mstack3 = mstack;
-//     std::cout << "Size of stack after assignment: " << mstack3.size() << std::endl;
-
-//     return 0;
-// }
